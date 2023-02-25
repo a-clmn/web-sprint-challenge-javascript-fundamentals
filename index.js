@@ -31,10 +31,16 @@ function myFunction() {
 */
 
 function summation(number) {
-  
+  for (let i = 0; i < number; i++) {
+  }
+  return counter(number);
 }  
 
-  console.log(summation(4))
+function counter(number) {
+  return number = (number * (number + 1)) / 2
+}
+  console.log(counter(4))
+  console.log("Closures, Task 2", summation(4))
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -62,7 +68,9 @@ const zooAnimals = [
   */
 
   function animalNames(array){
-
+    const displayNames = [];
+    array.forEach(element => displayNames.push(`name: ${element.animal_name}, scientific: ${element.scientific_name}`));
+    return displayNames;
   }
   
   console.log("ADVANCED Array Methods, Request 1", animalNames(zooAnimals))
@@ -81,7 +89,7 @@ const zooAnimals = [
     return array.map(element => element.animal_name.toLowerCase())
   }
 
-  console.log("ADVANCED Array Methods, Request 2", lowerCaseNames(zooAnimals))
+//  console.log("ADVANCED Array Methods, Request 2", lowerCaseNames(zooAnimals))
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -96,7 +104,7 @@ const zooAnimals = [
     return array.filter(element => element.population < 5)
   }
   
-  console.log("ADVANCED Array Methods, Request 3", lowPopulationAnimals(zooAnimals));
+//  console.log("ADVANCED Array Methods, Request 3", lowPopulationAnimals(zooAnimals));
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -108,10 +116,10 @@ const zooAnimals = [
   */
 
   function USApop(array){
-    array.reduce(element => element.population)
+    return array.reduce((acc, currentValue) => acc + currentValue.population, 0);
   }
   
-  console.log("ADVANCED Array Methods, Request 4", )
+  console.log("ADVANCED Array Methods, Request 4", USApop(zooAnimals))
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -181,8 +189,8 @@ function greeting(firstName, lastName){
 */
 
 function CuboidMaker(object){
-  this.length = object.length
-  this.width = object.width
+  this.length = object.length,
+  this.width = object.width,
   this.height = object.height
 }
 
@@ -203,7 +211,7 @@ CuboidMaker.prototype.volume = function(length, width, height) {
 */
 
 CuboidMaker.prototype.surfaceArea = function(length, width, height) {
-  return length * width + length * height + width * height;
+  return 2 * (length * width + length * height + width * height);
 }
 
 
@@ -212,8 +220,7 @@ CuboidMaker.prototype.surfaceArea = function(length, width, height) {
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
 
-const cuboid = new CuboidMaker(4, 5, 5);
-console.log(cuboid)
+const cuboid = new CuboidMaker({length: 4, width: 5, height: 5});
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
@@ -227,20 +234,20 @@ console.log(cuboid)
  
 class CuboidMakerTwo{
   constructor(object) {
-  this.length = object.length
-  this.width = object.width
+  this.length = object.length,
+  this.width = object.width,
   this.height = object.height
   }
   volume(length, width, height) {
     return length * width * height;
   }
   surfaceArea(length, width, height) {
-    return length * width + length * height + width * height;
+    return 2 * (length * width + length * height + width * height);
   }
 }
 
-const cuboidTwo = new CuboidMakerTwo(4, 5, 5);
-
+const cuboidTwo = new CuboidMakerTwo({length: 4, width: 5, height: 5});
+console.log(cuboidTwo);
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
  console.log(cuboidTwo.volume()); // 100
