@@ -39,8 +39,7 @@ function summation(number) {
 function counter(number) {
   return number = (number * (number + 1)) / 2
 }
-  console.log(counter(4))
-  console.log("Closures, Task 2", summation(4))
+//console.log("Closures, Task 2", summation(4))
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -73,7 +72,7 @@ const zooAnimals = [
     return displayNames;
   }
   
-  console.log("ADVANCED Array Methods, Request 1", animalNames(zooAnimals))
+  //console.log("ADVANCED Array Methods, Request 1", animalNames(zooAnimals))
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -119,7 +118,7 @@ const zooAnimals = [
     return array.reduce((acc, currentValue) => acc + currentValue.population, 0);
   }
   
-  console.log("ADVANCED Array Methods, Request 4", USApop(zooAnimals))
+  //console.log("ADVANCED Array Methods, Request 4", USApop(zooAnimals))
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -200,8 +199,8 @@ function CuboidMaker(object){
   💡 NOTE: Formula for cuboid volume: length * width * height   
 */
 
-CuboidMaker.prototype.volume = function(length, width, height) {
-  return length * width * height;
+CuboidMaker.prototype.volume = function() {
+  return this.length * this.width * this.height;
 }
 
 
@@ -210,8 +209,8 @@ CuboidMaker.prototype.volume = function(length, width, height) {
   💡 NOTE: Formula for cuboid surface area: 2 * (length * width + length * height + width * height)  
 */
 
-CuboidMaker.prototype.surfaceArea = function(length, width, height) {
-  return 2 * (length * width + length * height + width * height);
+CuboidMaker.prototype.surfaceArea = function() {
+  return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
 }
 
 
@@ -238,16 +237,16 @@ class CuboidMakerTwo{
   this.width = object.width,
   this.height = object.height
   }
-  volume(length, width, height) {
-    return length * width * height;
+  volume() {
+    return this.length * this.width * this.height;
   }
-  surfaceArea(length, width, height) {
-    return 2 * (length * width + length * height + width * height);
+  surfaceArea() {
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
   }
 }
 
 const cuboidTwo = new CuboidMakerTwo({length: 4, width: 5, height: 5});
-console.log(cuboidTwo);
+//console.log(cuboidTwo);
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
  console.log(cuboidTwo.volume()); // 100

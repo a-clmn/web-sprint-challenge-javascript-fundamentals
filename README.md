@@ -26,13 +26,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
+The .map method returns a new array after inacting a function onto each element inside the array. An example of use of this would be to return the numbers in a given array multipled by two. The .filter method is similar, but returns the "true" values into a new array based on a condition. An example would be "if population is greater than 3, return animals in zoo array." The .reduce method returns a single number based on functions inacted upon the numbers in a given array. A great use of .reduce is using it to calculate an overall or average value.
+
 2. Explain the difference between a callback and a higher order function.
+
+A callback function is used as a parameter to a higher order function.
 
 3. Explain what a closure is.
 
+A closure includes a function and it's lexical enviornment. If something is within a fucntion's lexical enviorment, it is within it's "scope" and can be called or used.
+
 4. Describe the four principles of the 'this' keyword.
 
+Window binding is generally used as a last resort if the terminal is not returning as intending. Implicit binding uses dot syntax and connects things using the "this" keyword. Explicit binding uses methods such as .call and functions in order to bind. The "new" keyword creates a new class or prototype based on an existing one.
+
 5. Why do we need super() in an extended class?
+
+We need super() in an extended class in order to pull aspects from the class extended from to ass to the new class.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
